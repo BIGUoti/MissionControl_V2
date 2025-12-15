@@ -1,0 +1,18 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/facilitator"
+  to = "/facilitator/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/astronaut"
+  to = "/astronaut/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/manuals"
+  to = "/manuals/index.html"
+  status = 200

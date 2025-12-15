@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mission Control V2 — Astronaut</title>
+  <link rel="stylesheet" href="/assets/app.css" />
+</head>
+<body data-role="astronaut">
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">
+        <div class="title">Mission Control V2</div>
+        <div class="badge">Astronaut</div>
+        <div class="badge">Room: <span id="roomCode">—</span></div>
+      </div>
+      <div class="row" style="justify-content:flex-end">
+        <div class="badge">Timer: <span id="timer">0:00</span></div>
+        <button class="btn primary" id="mayday">MAYDAY</button>
+        <button class="btn" id="restart">Restart Mission</button>
+      </div>
+    </div>
+
+    <div id="banner"></div>
+
+    <div class="grid cols-4" style="margin-bottom:12px">
+      <div class="kpi"><div class="label">Strikes</div><div class="val" id="strikes">0</div></div>
+      <div class="kpi"><div class="label">Penalty</div><div class="val" id="penalties">0s</div></div>
+      <div class="kpi"><div class="label">Power Lever</div><div class="val" id="power">OFFLINE</div></div>
+      <div class="kpi"><div class="label">Status</div><div class="val" id="status">IDLE</div></div>
+    </div>
+
+    <div id="panelGrid" class="grid cols-3"></div>
+
+    <div class="small" style="margin-top:12px; color:var(--muted)">
+      Tip: You can restart at any time. Timer won’t begin until MAYDAY is pressed again.
+    </div>
+  </div>
+
+  <script type="module" src="/assets/app.js"></script>
+</body>
+</html>

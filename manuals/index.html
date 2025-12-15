@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mission Control V2 — Manuals</title>
+  <link rel="stylesheet" href="/assets/app.css" />
+</head>
+<body data-role="manuals">
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">
+        <div class="title">Mission Control V2</div>
+        <div class="badge">Manual Hub</div>
+      </div>
+      <div class="row" style="justify-content:flex-end">
+        <div class="badge">Room: <span id="roomCode">—</span></div>
+        <a class="btn" href="/facilitator">Facilitator</a>
+        <a class="btn" href="/astronaut">Astronaut</a>
+      </div>
+    </div>
+
+    <div class="banner" id="banner" style="display:none"></div>
+
+    <div class="card">
+      <h2 style="margin-top:0">Manuals</h2>
+      <div class="small">These manuals are static for the mission. You’ll unlock instructions by answering the gate questions.</div>
+      <div class="hr"></div>
+      <div id="manualsContainer"></div>
+    </div>
+  </div>
+  <script type="module" src="/assets/app.js"></script>
+</body>
+</html>

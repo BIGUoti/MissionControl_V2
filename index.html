@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mission Control V2</title>
+  <link rel="stylesheet" href="/assets/app.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="topbar">
+        <div class="brand">
+          <div class="title">Mission Control V2</div>
+        </div>
+        <div class="badge">Landing</div>
+      </div>
+      <p class="small">Open one of the role routes with a mission code:</p>
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+        <div class="panel">
+          <h3>Facilitator</h3>
+          <p class="small">/facilitator?mission=CODE</p>
+        </div>
+        <div class="panel">
+          <h3>Astronaut</h3>
+          <p class="small">/astronaut?mission=CODE</p>
+        </div>
+        <div class="panel">
+          <h3>Manuals</h3>
+          <p class="small">/manuals?mission=CODE</p>
+        </div>
+      </div>
+      <p class="small">Tip: Start by opening Facilitator (no mission param needed), generate a room code, Apply Setup, then Generate Links.</p>
+    </div>
+  </div>
+</body>
+</html>

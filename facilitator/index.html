@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mission Control V2 — Facilitator</title>
+  <link rel="stylesheet" href="/assets/app.css" />
+</head>
+<body data-role="facilitator">
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">
+        <div class="title">Mission Control V2</div>
+        <div class="badge">Facilitator</div>
+      </div>
+      <div class="row" style="justify-content:flex-end">
+        <input class="input" id="missionCode" placeholder="ROOM CODE" style="width:150px;text-transform:uppercase" />
+        <button class="btn" id="genCode">Generate</button>
+        <button class="btn primary" id="connect">Connect</button>
+      </div>
+    </div>
+
+    <div id="banner" class="banner hidden"></div>
+
+    <div class="grid cols-2" style="margin-top:14px">
+      <div class="card" id="setup">
+        <div class="row" style="justify-content:space-between">
+          <h2 style="margin:0">Setup</h2>
+          <div class="row">
+            <button class="btn" id="hideSetup">Hide Setup</button>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="row">
+          <div style="flex:1">
+            <div class="label">Timer Duration (minutes)</div>
+            <input class="input" id="duration" type="number" min="1" max="90" value="12" />
+          </div>
+          <div style="flex:1">
+            <div class="label">Allow custom instructions</div>
+            <label class="pill"><input type="checkbox" id="allowCustom" /> Enable</label>
+            <div class="small">Custom instructions replace the correct option; decoys stay auto-generated.</div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="row" style="flex-wrap:wrap">
+          <button class="btn primary" id="applySetup">Apply Setup</button>
+          <button class="btn" id="lockMission" disabled>Lock Mission</button>
+          <button class="btn" id="resetMission" disabled>Reset (same mission)</button>
+          <button class="btn danger" id="regenMission" disabled>Regenerate Mission</button>
+        </div>
+        <div class="small" id="applyStatus" style="margin-top:8px"></div>
+
+        <div class="divider"></div>
+
+        <div class="row" style="flex-wrap:wrap">
+          <button class="btn" id="generateLinks" disabled>Generate Links</button>
+          <button class="btn" id="generateManuals" disabled>Generate Manuals</button>
+          <button class="btn" id="downloadManuals" disabled>Download Manuals</button>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="label">Links</div>
+        <div class="small">These open in new tabs. Keep the room code private; it is the key.</div>
+        <div class="row" style="flex-direction:column; align-items:stretch">
+          <input class="input" id="linkAstronaut" readonly placeholder="Astronaut link will appear here" />
+          <input class="input" id="linkManuals" readonly placeholder="Manual hub link will appear here" />
+          <input class="input" id="linkSpectator" readonly placeholder="Spectator link will appear here" />
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="label">Optional: Custom correct instructions</div>
+        <div class="small">If enabled, you can write one per panel. Leave blank to auto-generate.</div>
+        <div id="customInstructions" class="row" style="flex-direction:column; align-items:stretch"></div>
+      </div>
+
+      <div class="card" id="spectator">
+        <div class="row" style="justify-content:space-between">
+          <h2 style="margin:0">Spectator Dashboard</h2>
+          <button class="btn" id="showSetup">Show Setup</button>
+        </div>
+        <div class="divider"></div>
+        <div class="row" style="justify-content:space-between">
+          <div>
+            <div class="label">Timer</div>
+            <div class="kpi"><span id="timer">—</span> <span class="small" id="timerState"></span></div>
+          </div>
+          <div>
+            <div class="label">Strikes</div>
+            <div class="kpi" id="strikeKpi">0</div>
+          </div>
+          <div>
+            <div class="label">Penalties</div>
+            <div class="kpi" id="penaltyKpi">0s</div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="label">Panels</div>
+        <div id="statusList" class="row" style="flex-direction:column; align-items:stretch"></div>
+
+        <div class="divider"></div>
+        <div class="row" style="flex-wrap:wrap">
+          <button class="btn" id="forceComplete">Force Complete Panel…</button>
+          <label class="pill"><input type="checkbox" id="revealAnswers" /> Reveal Answers</label>
+        </div>
+        <div class="small">Force Complete is for testing. Reveal Answers is facilitator-only (obviously).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Password modal -->
+  <div class="modal" id="pwModal">
+    <div class="modal-card">
+      <h3 style="margin:0 0 10px 0">Facilitator Access</h3>
+      <div class="label">Password</div>
+      <input class="input" id="pw" type="password" placeholder="Enter password" />
+      <div class="row" style="justify-content:flex-end; margin-top:10px">
+        <button class="btn primary" id="pwSubmit">Enter</button>
+      </div>
+      <div class="small">Allowed: swsw, grfr, sksa, lchi, bigu, guest</div>
+    </div>
+  </div>
+
+  <script type="module" src="/assets/app.js"></script>
+</body>
+</html>
